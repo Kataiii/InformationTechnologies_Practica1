@@ -16,19 +16,19 @@
             <div>
                 <p class="container__text">@ViewBag.NoName</p>
             </div>
-            <input class="form__textField" id="user_name" type="text" name="user_name" placeholder="Your name" />
+            @Html.TextBox("user_name", null, new { @class = "form__textField", @placeholder = "Your name" })
 
             <p>Enter password( at least 8 charaster)</p>
             <div>
                 <p class="container__text">@ViewBag.SmallPassword</p>
             </div>
-            <input class="form__textField" id="password" type="text" name="password" placeholder="Password" />
+            @Html.Password("password", null, new { @class = "form__textField", @placeholder = "Password" })
 
             <p>Repeat password</p>
             <div>
                 <p class="container__text">@ViewBag.NotCorrectRepPas</p>
             </div>
-            <input class="form__textField" id="password_repeat" type="text" name="password_repeat" placeholder="Password" />
+            @Html.Password("password_repeat", null, new { @class = "form__textField", @placeholder = "Password" })
 
             <p>Enter e-mail</p>
             <div>
@@ -40,7 +40,7 @@
             <div>
                 <p class="container__text">@ViewBag.Age</p>
             </div>
-            <input class="form__textField" id="age" type="number" name="age" min="18" max="65" step="1" value="18"/>
+            <input class="form__textField" id="age" type="number" name="age" min="18" max="65" step="1" value="18" />
 
             <button id="submit" type="submit">SUBMIT</button>
         </form>
