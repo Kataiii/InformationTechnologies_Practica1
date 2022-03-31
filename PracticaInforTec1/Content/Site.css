@@ -130,7 +130,7 @@ a {
     text-transform: uppercase;
 }
 
-:hover {
+a:hover {
     color: #F3F3F3;
     background-size: 100% 100%;
     border: #0D49AB solid 1px;

@@ -3,5 +3,48 @@
     ViewBag.Title = "WebFormPractice2";
 }
 
-<h2>WebFormPractice2</h2>
+<html>
+<head>
+    <title>WebFormPractice2</title>
+</head>
+<body>
+    <div id="container">
+
+        <form class="conteiner__form" action="/Home/WebFormPractice2" method="post">
+            <h1>Form</h1>
+            <p>Please enter your name( it's required field)</p>
+            <div>
+                <p class="container__text">@ViewBag.NoName</p>
+            </div>
+            <input class="form__textField" id="user_name" type="text" name="user_name" placeholder="Your name" />
+
+            <p>Enter password( at least 8 charaster)</p>
+            <div>
+                <p class="container__text">@ViewBag.SmallPassword</p>
+            </div>
+            <input class="form__textField" id="password" type="text" name="password" placeholder="Password" />
+
+            <p>Repeat password</p>
+            <div>
+                <p class="container__text">@ViewBag.NotCorrectRepPas</p>
+            </div>
+            <input class="form__textField" id="password_repeat" type="text" name="password_repeat" placeholder="Password" />
+
+            <p>Enter e-mail</p>
+            <div>
+                <p class="container__text">@ViewBag.Mail</p>
+            </div>
+            <input class="form__textField" id="mail" type="email" name="mail" placeholder="your@mail.ru" />
+
+            <p>Enter your age</p>
+            <div>
+                <p class="container__text">@ViewBag.Age</p>
+            </div>
+            <input class="form__textField" id="age" type="number" name="age" min="18" max="65" step="1" value="18"/>
+
+            <button id="submit" type="submit">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>
 
