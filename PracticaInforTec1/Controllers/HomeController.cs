@@ -65,9 +65,25 @@ namespace PracticaInforTec1.Controllers
             return View();
         }
 
-        public ActionResult WebFormPractice2()
+        public ViewResult WebFormPractice2(List<string> values)
         {
+            List<string> values_fields = new List<string>() { "", "", "", "" };
+            if (values != null) values_fields = values;
+            ViewBag.NoName = values_fields[0];
+            ViewBag.SmallPassword = values_fields[1];
+            ViewBag.NotCorrectRepPas = values_fields[2];
             return View();
+
+        }
+
+        [HttpPost]
+        public ViewResult WebFormPractice2(string user_name, string password, string password_repeat)
+        {
+            List<string> values_fields = new List<string>() { "", "", "", "" };
+            if (user_name == null || user_name == "") values_fields[0] = "Please fill in the field";
+            if (password.Length < 8) values_fields[1] = "The password is too short";
+            if (!password_repeat.Equals(password)) values_fields[2] = "Passwords don't match";
+            return WebFormPractice2(values_fields);
         }
 
     }

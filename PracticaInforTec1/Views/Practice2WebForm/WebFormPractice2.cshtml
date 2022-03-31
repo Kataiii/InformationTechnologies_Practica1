@@ -10,7 +10,7 @@
 <body>
     <div id="container">
 
-        <form class="conteiner__form" action="/Home/WebFormPractice2" method="post">
+        <form class="conteiner__form" action="/Practice2WebForm/WebFormPractice2" method="get">
             <h1>Form</h1>
             <p>Please enter your name( it's required field)</p>
             <div>
@@ -28,7 +28,7 @@
             <div>
                 <p class="container__text">@ViewBag.NotCorrectRepPas</p>
             </div>
-            @Html.Password("password_repeat", null, new { @class = "form__textField", @placeholder = "Password repeat" })
+            @Html.Password("password_repeat", null, new { @class = "form__textField", @placeholder = "Password" })
 
             <p>Enter e-mail</p>
             <div>

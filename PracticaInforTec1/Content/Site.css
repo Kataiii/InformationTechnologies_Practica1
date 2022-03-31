@@ -39,7 +39,7 @@ p {
 .form__textField {
     width: 94%;
     height: 42px;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     padding-left: 1%;
     font-size: 1.25vw;
     font-family: 'Inconsolata', monospace;
@@ -48,7 +48,7 @@ p {
 .container__text {
     color: red;
     margin: 1% 0;
-    font-size: 1.25vw;
+    font-size: 0.9vw;
     font-family: 'Inconsolata', monospace;
 }
 
