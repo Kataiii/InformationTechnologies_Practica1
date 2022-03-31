@@ -115,6 +115,7 @@
     <None Include="Resources\Despairs-X3Wxo.ttf" />
     <Content Include="Views\Home\GreatingAndSurvey.cshtml" />
     <Content Include="Views\Home\WebForm.cshtml" />
+    <Content Include="Views\Home\WebFormPractice2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

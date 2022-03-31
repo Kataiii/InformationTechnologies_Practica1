@@ -48,15 +48,25 @@ namespace PracticaInforTec1.Controllers
         public ViewResult GreatingAndSurvey(string[] form__listBox)
         {
             string form__listBoxStrr = "";
-            foreach (string word in form__listBox)
+            if (form__listBox != null)
             {
-                form__listBoxStrr += word;
-                form__listBoxStrr += ", ";
+                foreach (string word in form__listBox)
+                {
+                    form__listBoxStrr += word;
+                    form__listBoxStrr += ", ";
+                }
             }
+            
             ViewBag.TextField = Request.Form["form__textField"];
-            ViewBag.Form__listBoxDrinks = form__listBoxStrr.Substring(0, form__listBoxStrr.Length-2); ;
+            ViewBag.Form__listBoxDrinks = form__listBox != null ?
+                form__listBoxStrr.Substring(0, form__listBoxStrr.Length-2) : form__listBoxStrr;
             ViewBag.Form__dpopDown = Request.Form["form__dpopDown"];
             ViewBag.Form__radio = Request.Form["example"];
+            return View();
+        }
+
+        public ActionResult WebFormPractice2()
+        {
             return View();
         }
 

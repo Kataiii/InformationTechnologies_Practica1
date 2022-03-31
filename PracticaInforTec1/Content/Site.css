@@ -63,11 +63,13 @@ button {
     border: 1px solid #0D49AB;
     margin-top: 1%;
     margin-left: 69%;
+    margin-bottom: 1%;
     background-image: linear-gradient(#F3F3F3, #F3F3F3);
     background-position: 0% 0%;
     background-repeat: no-repeat;
     background-size: 0% 100%;
     transition: background-size .5s, color .5s;
+    text-transform:uppercase;
 }
 
 button:hover {
@@ -106,4 +108,30 @@ button:hover {
     color: rgb(138 138 138);
 }
 
+a {
+    display:inline-block;
+    text-align:center;
+    width: 25%;
+    height: 42px;
+    text-decoration: none;
+    background-color: #F3F3F3;
+    color: #0D49AB;
+    font-size: 2.5vw;
+    font-family: Despairs; /* Гарнитура шрифта */
+    src: url(../Resources/Despairs-X3Wxo.ttf);
+    border: 1px solid #0D49AB;
+    margin-top: 1%;
+    margin-left: 69%;
+    background-image: linear-gradient(#0D49AB, #0D49AB);
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .5s, color .5s;
+    text-transform: uppercase;
+}
 
+:hover {
+    color: #F3F3F3;
+    background-size: 100% 100%;
+    border: #0D49AB solid 1px;
+}
