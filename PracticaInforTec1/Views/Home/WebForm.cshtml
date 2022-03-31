@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "WebForm";
+}
+
+<html>
+<head>
+    <title>WebForm</title>
+</head>
+<body>
+    <div id="container">
+
+        @using (Html.BeginForm("WebForm", "Home", FormMethod.Post))
+        {
+            <form>
+                <h1>Sign in</h1>
+                <div>
+                    <p class="container__text">@ViewBag.Greeting</p>
+                </div>
+
+                <input class="form__textField" id="login" type="text" name="login" placeholder="Login" />
+                <input class="form__textField" id="password" type="text" name="password" placeholder="Password" />
+                <button id="submit" type="submit">SUBMIT</button>
+            </form>
+        }
+
+    </div>
+</body>
+</html>
+

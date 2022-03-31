@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "GreatingAndSurvey";
+}
+
+<div id="container">
+    <form class="conteiner__form" action="/Home/GreatingAndSurvey" method="post">
+        <h1>Welcome</h1>
+        <p>How are you?</p>
+        <input class="form__textField" id="textSurvey" name="form__textField" type="text" placeholder="Comment" />
+
+        <p>What do you like best?</p>
+        @Html.ListBox("form__listBox", new MultiSelectList(new string[] { "Tea", "Coffee", "Water", "Juice" }))
+
+        <p>Who do you like best?</p>
+        <select id="form__dpopDown" name="form__dpopDown">
+            <option>Cat</option>
+            <option>Dog</option>
+        </select>
+
+        <p>2+2*2</p>
+        <p><input type="radio" name="example" value="8" />8</p>
+        <p><input type="radio" name="example" value="6" />6</p>
+        <p><input type="radio" name="example" value="4" />4</p>
+        <p><input type="radio" name="example" value="2" />2</p>
+
+        <button id="submit" type="submit">SUBMIT</button>
+
+        <label id="answer">
+            <p>@ViewBag.TextField</p>
+            <p>@ViewBag.Form__listBoxDrinks</p>
+            <p>@ViewBag.Form__dpopDown</p>
+            <p>@ViewBag.Form__radio</p>
+        </label>
+    </form>
+
+</div>
