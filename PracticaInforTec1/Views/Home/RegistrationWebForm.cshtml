@@ -3,5 +3,26 @@
     ViewBag.Title = "RegistrationWebForm";
 }
 
-<h2>RegistrationWebForm</h2>
+<html>
+<head>
+    <title>RegistrationWebForm</title>
+</head>
+<body>
+    <div id="container">
+
+        @using (Html.BeginForm("RegistrationLabel", "Home", FormMethod.Post))
+        {
+        <form>
+            <h1>Sign in</h1>
+
+            @Html.TextBox("login_session", null, new { @class = "form__textField", @placeholder = "Login" })
+            @Html.Password("password_session", null, new { @class = "form__textField", @placeholder = "Password" })
+
+            <button id="submit" type="submit">SUBMIT</button>
+        </form>
+        }
+
+    </div>
+</body>
+</html>
 

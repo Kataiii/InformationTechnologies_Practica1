@@ -117,5 +117,36 @@ namespace PracticaInforTec1.Controllers
             return WebFormPractice2(values_fields);
         }
 
+        private string getLogSession()
+        {
+            var login = Session["login_session"];
+            return login.ToString();
+        }
+
+        private string getPasSession()
+        {
+            var password = Session["password_session"];
+            return password.ToString();
+        }
+
+        [HttpGet]
+        public ViewResult RegistrationLabel()
+        {
+            
+            ViewBag.LoginSession =getLogSession();
+            ViewBag.PasswordSession = getPasSession();
+            return View();
+        }
+
+       [HttpPost]
+       public ViewResult RegistrationLabel(string login_session,string password_session)
+        {
+            Session["login_session"] = login_session;
+            Session["password_session"] = password_session;
+            bool isSessionNew = Session.IsNewSession;
+            string sessionId = Session.SessionID;
+            return RegistrationLabel();
+        }
+
     }
 }
