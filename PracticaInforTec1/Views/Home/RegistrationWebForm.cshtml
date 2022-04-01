@@ -14,7 +14,7 @@
         {
         <form>
             <h1>Sign in</h1>
-
+            <p>@ViewBag.NotCorrect</p>
             @Html.TextBox("login_session", null, new { @class = "form__textField", @placeholder = "Login" })
             @Html.Password("password_session", null, new { @class = "form__textField", @placeholder = "Password" })
 

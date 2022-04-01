@@ -138,9 +138,16 @@ namespace PracticaInforTec1.Controllers
             return View();
         }
 
+        public ViewResult RegistrationWebForm(string str)
+        {
+            ViewBag.NotCorrect = str;
+            return View();
+        }
+
        [HttpPost]
        public ViewResult RegistrationLabel(string login_session,string password_session)
         {
+            if (login_session == "" || password_session == "") return RegistrationWebForm("Not correct login or password. Please try again.");
             Session["login_session"] = login_session;
             Session["password_session"] = password_session;
             bool isSessionNew = Session.IsNewSession;
