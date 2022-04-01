@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
@@ -32,6 +33,11 @@ namespace PracticaInforTec1.Controllers
         }
 
         public ActionResult UncorrectLogAndPas()
+        {
+            return View();
+        }
+
+        public ActionResult RegistrationWebForm()
         {
             return View();
         }
@@ -72,6 +78,7 @@ namespace PracticaInforTec1.Controllers
             ViewBag.NoName = values_fields[0];
             ViewBag.SmallPassword = values_fields[1];
             ViewBag.NotCorrectRepPas = values_fields[2];
+            ViewBag.Mail = values_fields[3];
             return View();
 
         }
@@ -79,10 +86,34 @@ namespace PracticaInforTec1.Controllers
         [HttpPost]
         public ViewResult WebFormPractice2(string user_name, string password, string password_repeat)
         {
+            int flag = 0;
+            string reg_expression = "^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$";
             List<string> values_fields = new List<string>() { "", "", "", "" };
-            if (user_name == null || user_name == "") values_fields[0] = "Please fill in the field";
-            if (password.Length < 8) values_fields[1] = "The password is too short";
-            if (!password_repeat.Equals(password)) values_fields[2] = "Passwords don't match";
+            if (user_name == null || user_name == "")
+            {
+                flag = 1;
+                values_fields[0] = "Please fill in the field";
+            }
+            if (password.Length < 8)
+            {
+                flag = 1;
+                values_fields[1] = "The password is too short";
+            }
+            if (password_repeat==null|| String.IsNullOrWhiteSpace(password_repeat)|| !password_repeat.Equals(password))
+            {
+                flag = 1;
+                values_fields[2] = "Passwords don't match";
+            }
+            if (!Regex.IsMatch(Request.Form["mail"], reg_expression))
+            {
+                flag = 1;
+                values_fields[3] = "Email not correct";
+            }
+            if (flag == 0)
+            {
+                return View("RegistrationWebForm");
+            }
+            
             return WebFormPractice2(values_fields);
         }
 

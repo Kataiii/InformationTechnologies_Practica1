@@ -116,6 +116,7 @@
     <Content Include="Views\Home\GreatingAndSurvey.cshtml" />
     <Content Include="Views\Home\WebForm.cshtml" />
     <Content Include="Views\Home\WebFormPractice2.cshtml" />
+    <Content Include="Views\Home\RegistrationWebForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
