@@ -88,8 +88,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Calculator_style.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Calculator_script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +120,7 @@
     <Content Include="Views\Home\WebFormPractice2.cshtml" />
     <Content Include="Views\Home\RegistrationWebForm.cshtml" />
     <Content Include="Views\Home\RegistrationLabel.cshtml" />
+    <Content Include="Views\Home\Calculator.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

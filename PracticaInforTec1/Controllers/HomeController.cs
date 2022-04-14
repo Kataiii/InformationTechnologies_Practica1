@@ -155,5 +155,11 @@ namespace PracticaInforTec1.Controllers
             return RegistrationLabel();
         }
 
+
+        //5 PRACTICE
+        public ActionResult Calculator()
+        {
+            return View();
+        }
     }
 }
