@@ -11,6 +11,7 @@ namespace PracticaInforTec1.Controllers
 {
     public class HomeController : Controller
     {
+        PeopleContext db = new PeopleContext();
 
         // GET: Home
         [HttpGet]
@@ -160,6 +161,20 @@ namespace PracticaInforTec1.Controllers
         public ActionResult Calculator()
         {
             return View();
+        }
+
+        public ActionResult PeopleWithRewards()
+        {
+            var people_with_rewards = from p in db.People
+                                        join r in db.Rewards on p.RewardId equals r.Id into temp1
+                                        from t1 in temp1.DefaultIfEmpty()
+                                        select new PersonWithReward
+                                        {
+                                            personId = p.Id,
+                                            personName = p.Name,
+                                            rewardName = t1.Name
+                                        };
+            return View(people_with_rewards);
         }
     }
 }

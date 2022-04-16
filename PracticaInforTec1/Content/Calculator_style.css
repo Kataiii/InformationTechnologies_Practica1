@@ -1,3 +1,118 @@
-﻿body {
-    background-color:aquamarine;
+﻿*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.conteiner-calculator{
+    width:40%;
+    margin:3% auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    border: solid 2px #808080;
+    padding: 10px;
+}
+
+h2 {
+    color: #363636;
+    font-size: 2.5vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.conteiner__textfield{
+    width:100%;
+    margin-bottom:3%;
+}
+
+.calculator__textField {
+    width: 100%;
+    height: 42px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:300;
+}
+
+.conteiner__button-wrap{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+.conteiner__button {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conteiner__button-row {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.conteiner__button-operation {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    width: 33%;
+    margin: 1%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F3f3f3;
+    border: solid 1px #808080;
+    color: #363636;
+    background-image: linear-gradient(rgba(255,194,4,0.5),rgba(255,194,4,0.5));
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .5s,color .5s;
+}
+
+    button:hover {
+        background-color: rgba(255,194,4,0.25);
+        border: solid 1px #363636;
+        color:#363636;
+    }
+
+.button_operations {
+    width: 96%;
+    margin: 3%;
+    background-color: #FFC204;
+}
+
+#button_reset {
+    width: 33%;
+    color: #FFC204;
+    background-color: #F3f3f3;
+    margin: 1%;
+    background-image: linear-gradient(rgba(255,194,4,0.5),rgba(255,194,4,0.5));
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .5s,color .5s;
+}
+
+    #button_reset:hover {
+        color: #363636;
+        background-color: rgba(255,194,4,0.25);
+        border: solid 1px #363636;
+    }
+
+#button_result {
+    width: 33%;
+    margin: 1%;
+}
+
+#button_result:hover {
+    background-color: rgba(255,194,4,0.25);
+    border: solid 1px #363636;
+    color: #363636;
 }

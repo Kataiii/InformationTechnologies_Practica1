@@ -5,36 +5,53 @@
 
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="~/Content/Calculator_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h2>Calculator</h2>
+
     <div class="conteiner-calculator">
+        <h2>Calculator</h2>
         <div class="conteiner__textfield">
             @Html.TextBox("textfield_calculator", null, new { @class = "calculator__textField", @id = "calculator_textField" })
         </div>
         <div class="conteiner__button-wrap">
             <div class="conteiner__button">
-                <button class="button_number" value="1">1</button>
-                <button class="button_number" value="2">2</button>
-                <button class="button_number" value="3">3</button>
-                <button class="button_number" value="4">4</button>
-                <button class="button_number" value="5">5</button>
-                <button class="button_number" value="6">6</button>
-                <button class="button_number" value="7">7</button>
-                <button class="button_number" value="8">8</button>
-                <button class="button_number" value="9">9</button>
-                <button class="button_number" value="0">0</button>
-                <button class="button_operation" value="result">=</button>
+                <div class="conteiner__button-row">
+                    <button class="button_number" value="1">1</button>
+                    <button class="button_number" value="2">2</button>
+                    <button class="button_number" value="3">3</button>
+                </div>
+                <div class="conteiner__button-row">
+                    <button class="button_number" value="4">4</button>
+                    <button class="button_number" value="5">5</button>
+                    <button class="button_number" value="6">6</button>
+                </div>
+                <div class="conteiner__button-row">
+                    <button class="button_number" value="7">7</button>
+                    <button class="button_number" value="8">8</button>
+                    <button class="button_number" value="9">9</button>
+                </div>
+                <div class="conteiner__button-row">
+                    <button class="button_operations" id="button_reset" value="reset">C</button>
+                    <button class="button_number" value="0">0</button>
+                    <button class="button_operations" id="button_result" value="result">=</button>
+                </div>
             </div>
-            <div>
-                <button class="button_operation" value="sum">+</button>
-                <button class="button_operation" value="min">-</button>
-                <button class="button_operation" value="div">/</button>
-                <button class="button_operation" value="mul">*</button>
+            <div class="conteiner__button-operation">
+                <button class="button_operations" value="sum">+</button>
+                <button class="button_operations" value="min">-</button>
+                <button class="button_operations" value="div">/</button>
+                <button class="button_operations" value="mul">*</button>
             </div>
         </div>
     </div>
+    @using (Html.BeginForm("PeopleWithRewards", "Home", FormMethod.Post, new { @class="form__button"}))
+    {
+        <button class="button-next"  name="action" value="next">Next</button>
+    }
     <script src="@Url.Content("~/Scripts/Calculator_script.js")" type="text/javascript"></script>
 </body>
 </html>
