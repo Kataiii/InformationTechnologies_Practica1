@@ -109,8 +109,11 @@ function readValueButton() {
                         input.value = str_input;
                         break;
                     case "result":
-                        //parser(str_input);
-                        input.value = eval(str_input);
+                        let result = eval(str_input);
+                        if (result == undefined || result == NaN) {
+                            input.value = "Error";
+                        } else input.value = result;
+                        
                         str_input = "";
                         break;
                 }
